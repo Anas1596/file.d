@@ -1,0 +1,487 @@
+/* Reset و تنظیمات پایه */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    color: #333;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.app-container {
+    width: 100%;
+    max-width: 1200px;
+    height: 100vh;
+    max-height: 800px;
+    background-color: #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.page {
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+
+.page.active {
+    display: flex;
+}
+
+/* استایل‌های صفحه ورود و ثبت‌نام */
+.login-container {
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
+    padding: 30px;
+    text-align: center;
+}
+
+.logo {
+    margin-bottom: 30px;
+    color: #4a6fa5;
+}
+
+.logo i {
+    font-size: 50px;
+    margin-bottom: 15px;
+}
+
+.logo h1 {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    text-align: right;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #555;
+}
+
+.input-group input,
+.input-group select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+    border-color: #4a6fa5;
+    outline: none;
+}
+
+.btn-primary {
+    width: 100%;
+    padding: 12px;
+    background-color: #4a6fa5;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+.btn-primary:hover {
+    background-color: #3a5a8f;
+}
+
+.btn-secondary {
+    width: 100%;
+    padding: 12px;
+    background-color: transparent;
+    color: #4a6fa5;
+    border: 1px solid #4a6fa5;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 10px;
+}
+
+.btn-secondary:hover {
+    background-color: #f0f4f9;
+}
+
+.message {
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.message.error {
+    background-color: #ffebee;
+    color: #d32f2f;
+}
+
+.message.success {
+    background-color: #e8f5e9;
+    color: #388e3c;
+}
+
+/* استایل‌های صفحه چت */
+.sidebar {
+    width: 300px;
+    height: 100%;
+    background-color: #f8f9fa;
+    border-right: 1px solid #e0e0e0;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-header {
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #4a6fa5;
+    color: white;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+}
+
+.user-profile img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-left: 10px;
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    color: inherit;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+}
+
+.icon-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.search-container {
+    position: relative;
+    padding: 15px;
+}
+
+.search-container input {
+    width: 100%;
+    padding: 10px 15px 10px 35px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    font-size: 14px;
+}
+
+.search-container i {
+    position: absolute;
+    left: 25px;
+    top: 25px;
+    color: #888;
+}
+
+.contacts-list {
+    flex: 1;
+    overflow-y: auto;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-bottom: 1px solid #eee;
+}
+
+.contact-item:hover {
+    background-color: #e9ecef;
+}
+
+.contact-item.active {
+    background-color: #e0e7ff;
+}
+
+.contact-item img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    margin-left: 10px;
+}
+
+.contact-info {
+    flex: 1;
+}
+
+.contact-name {
+    font-weight: 600;
+    margin-bottom: 3px;
+}
+
+.contact-last-message {
+    font-size: 13px;
+    color: #777;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.contact-time {
+    font-size: 12px;
+    color: #999;
+    text-align: left;
+}
+
+.chat-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.chat-header {
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.chat-info {
+    display: flex;
+    align-items: center;
+}
+
+.chat-info img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    margin-left: 10px;
+}
+
+.chat-info h3 {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.chat-info p {
+    font-size: 13px;
+    color: #777;
+}
+
+.chat-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.messages-container {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    background-color: #e5ddd5;
+    background-image: url('https://web.whatsapp.com/img/bg-chat-tile-light_a4be512e7195b6b733d9110b408f075d.png');
+    background-repeat: repeat;
+}
+
+.no-chat-selected {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: #777;
+}
+
+.no-chat-selected i {
+    font-size: 60px;
+    margin-bottom: 20px;
+    color: #ccc;
+}
+
+.message-input-container {
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    background-color: #f0f2f5;
+    border-top: 1px solid #e0e0e0;
+}
+
+.message-input-container input {
+    flex: 1;
+    padding: 12px 15px;
+    border: none;
+    border-radius: 20px;
+    font-size: 14px;
+    margin: 0 10px;
+}
+
+.message-input-container input:focus {
+    outline: none;
+}
+
+.input-actions {
+    display: flex;
+    gap: 5px;
+}
+
+/* استایل‌های پیام‌ها */
+.message {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.message-incoming {
+    align-items: flex-start;
+}
+
+.message-outgoing {
+    align-items: flex-end;
+}
+
+.message-bubble {
+    max-width: 70%;
+    padding: 10px 15px;
+    border-radius: 8px;
+    position: relative;
+    word-wrap: break-word;
+}
+
+.message-incoming .message-bubble {
+    background-color: white;
+    border-top-right-radius: 0;
+}
+
+.message-outgoing .message-bubble {
+    background-color: #dcf8c6;
+    border-top-left-radius: 0;
+}
+
+.message-sender {
+    font-weight: 600;
+    font-size: 13px;
+    margin-bottom: 3px;
+}
+
+.message-text {
+    font-size: 15px;
+    line-height: 1.4;
+}
+
+.message-time {
+    font-size: 11px;
+    color: #777;
+    text-align: left;
+    margin-top: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.message-outgoing .message-time {
+    color: #4a6fa5;
+}
+
+.message-status {
+    margin-right: 3px;
+    font-size: 10px;
+}
+
+/* حالت تایپینگ */
+.typing-indicator {
+    display: flex;
+    padding: 10px 15px;
+    background-color: white;
+    border-radius: 8px;
+    border-top-right-radius: 0;
+    width: fit-content;
+    margin-bottom: 15px;
+}
+
+.typing-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #999;
+    border-radius: 50%;
+    margin: 0 2px;
+    animation: typingAnimation 1.4s infinite ease-in-out;
+}
+
+.typing-dot:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.typing-dot:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.typing-dot:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes typingAnimation {
+    0%, 60%, 100% { transform: translateY(0); }
+    30% { transform: translateY(-5px); }
+}
+
+/* رسپانسیو */
+@media (max-width: 768px) {
+    .app-container {
+        border-radius: 0;
+        max-height: none;
+    }
+    
+    .sidebar {
+        width: 100%;
+        display: none;
+    }
+    
+    .sidebar.active {
+        display: flex;
+    }
+    
+    .chat-container {
+        display: none;
+    }
+    
+    .chat-container.active {
+        display: flex;
+    }
+    
+    .back-to-contacts {
+        display: block;
+    }
+}
