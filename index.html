@@ -1,32 +1,126 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <title>file.d documentation</title>
-  <link rel="icon" type="image/png" href="/file.d/static/file.d.png" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <meta name="description" content="A blazing fast tool for building data pipelines: read, process, and output events.">
-  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dargak - پیام‌رسان دارک</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-  <div id="app"></div>
-  <script>
-    window.$docsify = {
-      name: 'file.d',
-      repo: 'https://github.com/ozontech/file.d',
-      loadSidebar: true,
-      loadNavbar: true,
-      subMaxLevel: 2,
-      maxLevel: 1,
-      coverpage: true,
-      auto2top: true,
-      markdown: {
-        gfm: true
-      }
-    }
-  </script>
-  <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
-  <script src="//unpkg.com/docsify-copy-code"></script>
+    <div class="app-container">
+        <!-- صفحه ورود -->
+        <div id="login-page" class="page active">
+            <div class="login-container">
+                <div class="logo">
+                    <i class="fas fa-comments"></i>
+                    <h1>Dargak</h1>
+                </div>
+                <form id="login-form">
+                    <div class="input-group">
+                        <label for="phone">شماره تلفن</label>
+                        <input type="tel" id="phone" placeholder="+989123456789" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="password">رمز عبور</label>
+                        <input type="password" id="password" required>
+                    </div>
+                    <button type="submit" class="btn-primary">ورود</button>
+                    <button type="button" id="register-btn" class="btn-secondary">ثبت‌نام</button>
+                </form>
+                <div id="login-message" class="message"></div>
+            </div>
+        </div>
+
+        <!-- صفحه ثبت‌نام -->
+        <div id="register-page" class="page">
+            <div class="login-container">
+                <div class="logo">
+                    <i class="fas fa-comments"></i>
+                    <h1>Dargak</h1>
+                </div>
+                <form id="register-form">
+                    <div class="input-group">
+                        <label for="reg-phone">شماره تلفن</label>
+                        <input type="tel" id="reg-phone" placeholder="+989123456789" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="reg-name">نام کامل</label>
+                        <input type="text" id="reg-name" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="reg-password">رمز عبور</label>
+                        <input type="password" id="reg-password" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="reg-language">زبان</label>
+                        <select id="reg-language">
+                            <option value="fa">فارسی</option>
+                            <option value="en">English</option>
+                            <option value="ar">العربية</option>
+                            <option value="es">Español</option>
+                            <option value="fr">Français</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn-primary">ثبت‌نام</button>
+                    <button type="button" id="back-to-login" class="btn-secondary">بازگشت به ورود</button>
+                </form>
+                <div id="register-message" class="message"></div>
+            </div>
+        </div>
+
+        <!-- صفحه اصلی چت -->
+        <div id="chat-page" class="page">
+            <div class="sidebar">
+                <div class="sidebar-header">
+                    <div class="user-profile">
+                        <img id="user-avatar" src="https://via.placeholder.com/40" alt="User Avatar">
+                        <span id="user-name">کاربر</span>
+                    </div>
+                    <button id="logout-btn" class="icon-btn"><i class="fas fa-sign-out-alt"></i></button>
+                </div>
+                <div class="search-container">
+                    <input type="text" id="search-contacts" placeholder="جستجوی مخاطبین...">
+                    <i class="fas fa-search"></i>
+                </div>
+                <div class="contacts-list" id="contacts-list">
+                    <!-- مخاطبین به صورت داینامیک اضافه می‌شوند -->
+                </div>
+            </div>
+            <div class="chat-container">
+                <div class="chat-header">
+                    <div class="chat-info">
+                        <img id="chat-avatar" src="https://via.placeholder.com/40" alt="Chat Avatar">
+                        <div>
+                            <h3 id="chat-title">انتخاب مکالمه</h3>
+                            <p id="chat-status">آخرین بازدید: اخیراً</p>
+                        </div>
+                    </div>
+                    <div class="chat-actions">
+                        <button class="icon-btn"><i class="fas fa-phone"></i></button>
+                        <button class="icon-btn"><i class="fas fa-video"></i></button>
+                        <button class="icon-btn"><i class="fas fa-ellipsis-v"></i></button>
+                    </div>
+                </div>
+                <div class="messages-container" id="messages-container">
+                    <!-- پیام‌ها به صورت داینامیک اضافه می‌شوند -->
+                    <div class="no-chat-selected">
+                        <i class="fas fa-comments"></i>
+                        <p>مکالمه‌ای انتخاب نشده است</p>
+                    </div>
+                </div>
+                <div class="message-input-container">
+                    <div class="input-actions">
+                        <button class="icon-btn"><i class="fas fa-paperclip"></i></button>
+                        <button class="icon-btn"><i class="fas fa-smile"></i></button>
+                    </div>
+                    <input type="text" id="message-input" placeholder="پیام خود را بنویسید...">
+                    <button id="send-btn" class="icon-btn"><i class="fas fa-paper-plane"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
-</html>
+              </html>
